@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemabibliotecario.vistas.LoginController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="467.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sistemabibliotecario.vistas.LoginController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="530.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../imagenes/uvLogo.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="646.0" layoutY="52.0" text="Sistema Bibliotecario" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="585.0" layoutY="126.0" text="Nombre de usuario:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="584.0" layoutY="214.0" text="Contraseña:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf_NombreUsuario" layoutX="583.0" layoutY="160.0" prefHeight="30.0" prefWidth="260.0" />
+      <PasswordField fx:id="pf_Password" layoutX="585.0" layoutY="247.0" prefHeight="30.0" prefWidth="260.0" />
+      <Button layoutX="655.0" layoutY="324.0" mnemonicParsing="false" onAction="#clicIniciarSesion" prefHeight="30.0" prefWidth="120.0" text="Iniciar Sesion" />
+   </children>
 </AnchorPane>

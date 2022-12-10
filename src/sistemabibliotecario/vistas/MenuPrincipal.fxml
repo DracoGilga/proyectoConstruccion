@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemabibliotecario.vistas.MenuPrincipalController">
+   <children>
+      <Button fx:id="btn_CerrarSesion" layoutX="390.0" layoutY="523.0" mnemonicParsing="false" onAction="#clicCerrarSesion" prefHeight="30.0" prefWidth="120.0" text="Cerrar Sesion">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="61.0" layoutY="58.0" mnemonicParsing="false" onAction="#clicRegistrarRecurso" prefHeight="150.0" prefWidth="350.0" text="Registrar Recurso Donado">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="501.0" layoutY="58.0" mnemonicParsing="false" onAction="#clicRegistrarUsuario" prefHeight="150.0" prefWidth="350.0" text="Registrar Usuario">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="61.0" layoutY="244.0" mnemonicParsing="false" onAction="#clicRegistrarPrestamo" prefHeight="150.0" prefWidth="350.0" text="Registrar Préstamo en Sala">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="501.0" layoutY="244.0" mnemonicParsing="false" onAction="#clicSolicitarRenovacion" prefHeight="150.0" prefWidth="350.0" text="Solicitar Renovación">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
