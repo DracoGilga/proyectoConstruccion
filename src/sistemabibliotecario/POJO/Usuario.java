@@ -3,23 +3,21 @@ package sistemabibliotecario.POJO;
 
 public class Usuario 
 {
-    int idUsuario;
-    String nombreUsuario, contrasenaUsuario;
+    private int idUsuario;
+    private String nombreUsuario;
+    private String contrasenaUsuario;
+    private int codigoRespuesta;
     
     //CONSTRUCTORES
     public Usuario() 
     {
     }
-    public Usuario(int idUsuario, String nombreUsuario, String contrasenaUsuario) 
-    {
+
+    public Usuario(int idUsuario, String nombreUsuario, String contrasenaUsuario, int codigoRespuesta) {
         this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
         this.contrasenaUsuario = contrasenaUsuario;
-    }
-    public Usuario(String nombreUsuario, String contrasenaUsuario) 
-    {
-        this.nombreUsuario = nombreUsuario;
-        this.contrasenaUsuario = contrasenaUsuario;
+        this.codigoRespuesta = codigoRespuesta;
     }
     
     //GETTERS
@@ -27,27 +25,36 @@ public class Usuario
     {
         return idUsuario;
     }
-    public String getNombreUsuario() 
-    {
+
+    public String getNombreUsuario() {
         return nombreUsuario;
     }
-    public String getContrasenaUsuario() 
-    {
+
+    public String getContrasenaUsuario() {
         return contrasenaUsuario;
     }
+
     
+    public int getCodigoRespuesta() {
+        return codigoRespuesta;
+    }
+
     //SETTERS
 
-    public void setIdUsuario(int idUsuario) 
-    {
+    public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
     }
-    public void setNombreUsuario(String nombreUsuario) 
-    {
+
+    public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
-    public void setContrasenaUsuario(String contrasenaUsuario) 
-    {
+
+    public void setContrasenaUsuario(String contrasenaUsuario) {
         this.contrasenaUsuario = contrasenaUsuario;
     }
+
+    public void setCodigoRespuesta(int codigoRespuesta) {
+        this.codigoRespuesta = codigoRespuesta;
+    }
+    
 }

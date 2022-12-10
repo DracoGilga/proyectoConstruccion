@@ -6,6 +6,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemabibliotecario.vistas.RegistrarRecursoDonadoController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sistemabibliotecario.vistas.RegistrarRecursoDonadoController">
+   <children>
+      <Button fx:id="btn_Cancelar" layoutX="269.0" layoutY="337.0" mnemonicParsing="false" onAction="#clicCancelar" text="Cancelar" />
+   </children>
 </AnchorPane>
