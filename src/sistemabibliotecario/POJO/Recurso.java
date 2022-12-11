@@ -40,6 +40,18 @@ public class Recurso
         this.estado = estado;
         this.numDisponible = numDisponible;
     }
+
+    public Recurso(String titulo, String editor, String autor, String ISBN, String serie, String estado, int numDisponible,String danio) {
+        this.titulo = titulo;
+         this.editor = editor;
+        this.autor = autor;
+        this.ISBN = ISBN;
+        this.serie = serie;
+        this.estado = estado;
+        this.numDisponible = numDisponible;
+        this.anio = danio;
+    }
+    
     
     //SETTERS
     public void setTitulo(String titulo) 

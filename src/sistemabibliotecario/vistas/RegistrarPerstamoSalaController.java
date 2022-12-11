@@ -5,8 +5,6 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -57,17 +55,16 @@ public class RegistrarPerstamoSalaController implements Initializable
     {
         LocalDate fechaPrestamo = D_fechaPrestamo.getValue();
                     
-        try {
-            
+        try 
+        {
             if(PrestamoDAO.registrarPrestamoSala(recursoLibro.getIdRecurso(), fechaPrestamo.toString()))
-            {
                 Utilidades.mostrarAlerta("Exito", "Se registro el prestamo del libo", Alert.AlertType.CONFIRMATION);
-            }
-            else{
+            else 
                 Utilidades.mostrarAlerta("Error", "no fue posible encontrar el recurso", Alert.AlertType.ERROR);
-            }
-            
-        } catch (SQLException ex) {
+                       
+        } 
+        catch (SQLException ex) 
+        {
             Utilidades.mostrarAlerta("Error de conexion", "Hubo un error en el proceso de comunicacion, intentelo mas tarde", Alert.AlertType.ERROR);
         }
     }
