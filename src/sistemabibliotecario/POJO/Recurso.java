@@ -18,7 +18,7 @@ public class Recurso
     private String ISBN ;
     private String serie ;
     private String asignatura ;
-    private String danio ;
+    private String anio ;
     private String estado ;
     private int numDisponible ;
     
@@ -36,7 +36,7 @@ public class Recurso
         this.ISBN = ISBN;
         this.serie = serie;
         this.asignatura = asignatura;
-        this.danio = danio;
+        this.anio = danio;
         this.estado = estado;
         this.numDisponible = numDisponible;
     }
@@ -70,9 +70,9 @@ public class Recurso
     {
         this.asignatura = asignatura;
     }
-    public void setDanio(String danio) 
+    public void setAnio(String anio) 
     {
-        this.danio = danio;
+        this.anio = anio;
     }
     public void setEstado(String estado) 
     {
@@ -120,9 +120,9 @@ public class Recurso
     {
         return asignatura;
     }
-    public String getDanio() 
+    public String getAnio() 
     {
-        return danio;
+        return anio;
     }
     public String getEstado() 
     {

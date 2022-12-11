@@ -30,10 +30,10 @@ public class RecursoDAO
                     recursoBibliotecario.setTitulo(resultadoConsulta.getString("titulo"));
                     recursoBibliotecario.setAutor(resultadoConsulta.getString("autor"));
                     recursoBibliotecario.setEditor(resultadoConsulta.getString("editor"));
-                    recursoBibliotecario.setDanio(resultadoConsulta.getString("danio"));
+                    recursoBibliotecario.setAnio(resultadoConsulta.getString("anio"));
                     recursoBibliotecario.setSerie(resultadoConsulta.getString("serie"));
                     recursoBibliotecario.setNumDisponible(resultadoConsulta.getInt("numDisponible"));
-
+                    recursoBibliotecario.setIdRecurso(resultadoConsulta.getInt("idRecurso"));
                 }
                  else
                 {
