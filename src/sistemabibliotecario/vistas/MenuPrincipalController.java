@@ -86,12 +86,12 @@ public class MenuPrincipalController implements Initializable
         try
         {
             
-            Parent vista = FXMLLoader.load(getClass().getResource("RegistrarUsuario.fxml"));
+            Parent vista = FXMLLoader.load(getClass().getResource("SeleccionarUsuarioRegistro.fxml"));
             Scene escenaUsuario = new Scene(vista);
             Stage escenarioNuevo = new Stage();
             escenarioNuevo.setScene(escenaUsuario);
             escenarioNuevo.initModality(Modality.APPLICATION_MODAL);
-            escenarioNuevo.setTitle("Registrar usuario");
+            escenarioNuevo.setTitle("Seleccionar tipo de usuario");
             escenarioNuevo.showAndWait();
             
         } catch(IOException ie)
