@@ -6,18 +6,16 @@ public class Usuario
     private int idUsuario;
     private String nombreUsuario;
     private String contrasenaUsuario;
-    private int codigoRespuesta;
     
     //CONSTRUCTORES
     public Usuario() 
     {
     }
 
-    public Usuario(int idUsuario, String nombreUsuario, String contrasenaUsuario, int codigoRespuesta) {
+    public Usuario(int idUsuario, String nombreUsuario, String contrasenaUsuario) {
         this.idUsuario = idUsuario;
         this.nombreUsuario = nombreUsuario;
         this.contrasenaUsuario = contrasenaUsuario;
-        this.codigoRespuesta = codigoRespuesta;
     }
     
     //GETTERS
@@ -34,10 +32,6 @@ public class Usuario
         return contrasenaUsuario;
     }
 
-    
-    public int getCodigoRespuesta() {
-        return codigoRespuesta;
-    }
 
     //SETTERS
 
@@ -53,8 +47,5 @@ public class Usuario
         this.contrasenaUsuario = contrasenaUsuario;
     }
 
-    public void setCodigoRespuesta(int codigoRespuesta) {
-        this.codigoRespuesta = codigoRespuesta;
-    }
     
 }

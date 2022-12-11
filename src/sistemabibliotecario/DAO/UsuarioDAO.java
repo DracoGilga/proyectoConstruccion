@@ -22,8 +22,8 @@ public class UsuarioDAO
             try
             {
                 
-                String consulta = "SELECT idUsuario, nombreUsuario FROM usuario "
-                    + "WHERE nombreUsuario = ? AND contrasenaUsuario = ?";
+                String consulta = "SELECT idUsuario, username FROM usuario "
+                    + "WHERE username = ? AND password = ?";
             PreparedStatement consultaLogin = conexionBD.prepareCall(consulta);
             consultaLogin.setString(1, nombreUsuario);
             consultaLogin.setString(2, contrasenaUsuario);
@@ -33,7 +33,7 @@ public class UsuarioDAO
                 {
                     
                     usuarioSesion.setIdUsuario(resultadoConsulta.getInt("idUsuario"));
-                    usuarioSesion.setNombreUsuario(resultadoConsulta.getString("nombreUsuario"));
+                    usuarioSesion.setNombreUsuario(resultadoConsulta.getString("username"));
                     
                 }else
                 {

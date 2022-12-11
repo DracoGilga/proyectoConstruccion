@@ -1,3 +1,7 @@
+/*
+ * 
+ * 
+ */
 package sistemabibliotecario.vistas;
 
 import java.net.URL;
@@ -13,20 +17,19 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import sistemabibliotecario.DAO.CarreraDAO;
-import sistemabibliotecario.DAO.EstudianteDAO;
+import sistemabibliotecario.DAO.DocenteDAO;
 import sistemabibliotecario.DAO.RegionDAO;
-import sistemabibliotecario.POJO.Carrera;
-import sistemabibliotecario.POJO.Estudiante;
+import sistemabibliotecario.POJO.Docente;
 import sistemabibliotecario.POJO.Region;
 import sistemabibliotecario.POJO.ResultadoOperacion;
 import sistemabibliotecario.utills.Utilidades;
 
-
-public class RegistrarAlumnoController implements Initializable {
+public class RegistrarDocenteController implements Initializable {
 
     @FXML
-    private TextField tf_Matricula;
+    private ComboBox<Region> cb_Region;
+    @FXML
+    private TextField tf_NumeroPersonal;
     @FXML
     private TextField tf_Nombre;
     @FXML
@@ -35,20 +38,13 @@ public class RegistrarAlumnoController implements Initializable {
     private TextField tf_ApellidoMaterno;
     @FXML
     private TextField tf_Direccion;
-    @FXML
-    private ComboBox<Carrera> cb_Carrera;
-    @FXML
-    private ComboBox<Region> cb_Region;
     
-    private ObservableList<Carrera> listaCarreras;
     private ObservableList<Region> listaRegiones;
-
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
         
-        cargarListaCarreras();
         cargarListaRegiones();
         
     }    
@@ -65,48 +61,25 @@ public class RegistrarAlumnoController implements Initializable {
     private void clicRegistrar(ActionEvent event) 
     {
         
-        String matricula = tf_Matricula.getText();
+        String numeroPersonal = tf_NumeroPersonal.getText();
         String nombre = tf_Nombre.getText();
         String apellidoPaterno = tf_ApellidoPaterno.getText();
         String apellidoMaterno = tf_ApellidoMaterno.getText();
         String direccion = tf_Direccion.getText();
-        int idCarrera = cb_Carrera.getSelectionModel().getSelectedItem().getIdCarrera();
         int idRegion = cb_Region.getSelectionModel().getSelectedItem().getIdRegion();
         boolean valido = true;
         
         if(valido)
         {
             
-          Estudiante estudiante = new Estudiante();
-          estudiante.setMatricula(matricula);
-          estudiante.setNombre(nombre);
-          estudiante.setApellidoPaterno(apellidoPaterno);
-          estudiante.setApellidoMaterno(apellidoMaterno);
-          estudiante.setDireccion(direccion);
-          estudiante.setIdCarrera(idCarrera);
-          estudiante.setIdRegion(idRegion);
-          guardarRegistroNuevo(estudiante);
-            
-        }
-        
-        
-    }
-
-    private void cargarListaCarreras() 
-    {
-        
-        listaCarreras = FXCollections.observableArrayList();
-        try
-        {
-            
-            ArrayList<Carrera> carrerasBD = CarreraDAO.obtenerCarreras();
-            listaCarreras.addAll(carrerasBD);
-            cb_Carrera.setItems(listaCarreras);
-            
-        } catch(SQLException ex)
-        {
-            
-            ex.printStackTrace();
+          Docente docente = new Docente();
+          docente.setNumeroPersonal(numeroPersonal);
+          docente.setNombre(nombre);
+          docente.setApellidoPaterno(apellidoPaterno);
+          docente.setApellidoMaterno(apellidoMaterno);
+          docente.setDireccion(direccion);
+          docente.setIdRegion(idRegion);
+          guardarRegistroNuevo(docente);
             
         }
         
@@ -140,23 +113,23 @@ public class RegistrarAlumnoController implements Initializable {
         
     }
 
-    private void guardarRegistroNuevo(Estudiante estudianteNuevo) 
+    private void guardarRegistroNuevo(Docente docenteNuevo) 
     {
         
-        try
+       try
         {
             
-            ResultadoOperacion resultadoGuardar = EstudianteDAO.registrarEstudiante(estudianteNuevo);
+            ResultadoOperacion resultadoGuardar = DocenteDAO.registrarDocente(docenteNuevo);
             if(!resultadoGuardar.isError())
             {
                 
-                Utilidades.mostrarAlerta("Alumno registrado", resultadoGuardar.getMensaje(), Alert.AlertType.INFORMATION);
+                Utilidades.mostrarAlerta("Docente registrado", resultadoGuardar.getMensaje(), Alert.AlertType.INFORMATION);
                 cerrarVentana();
                 
             } else
             {
                 
-                Utilidades.mostrarAlerta("Error al registrar alumno", resultadoGuardar.getMensaje(), Alert.AlertType.ERROR);
+                Utilidades.mostrarAlerta("Error al registrar docente", resultadoGuardar.getMensaje(), Alert.AlertType.ERROR);
                 
             }
             
@@ -165,7 +138,7 @@ public class RegistrarAlumnoController implements Initializable {
             
             Utilidades.mostrarAlerta("Error de conexión", ex.getMessage(), Alert.AlertType.ERROR);
             
-        }
+        } 
         
     }
     
