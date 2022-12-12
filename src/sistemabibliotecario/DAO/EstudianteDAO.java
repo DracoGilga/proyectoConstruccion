@@ -43,14 +43,13 @@ public class EstudianteDAO
                int numeroFilas = preparedStatement.executeUpdate();
                if(numeroFilas>0)
                 {
-                    
                     respuesta.setError(false);
                     respuesta.setMensaje("Alumno registrado correctamente");
                     respuesta.setNumeroFilasAfectadas(numeroFilas);
                     
                 } 
                else
-                    respuesta.setMensaje("No se pudo registrar la informacion del almno");
+                    respuesta.setMensaje("No se pudo registrar la informacion del alumno");
     
            } catch(SQLException ex)
            {

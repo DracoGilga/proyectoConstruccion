@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import sistemabibliotecario.POJO.Recurso;
+import sistemabibliotecario.POJO.ResultadoOperacion;
 import sistemabibliotecario.conexionBD.ConexionBD;
 
 
@@ -54,8 +55,11 @@ public class RecursoDAO
         return recursoBibliotecario;
     }
     
-    public static Recurso registrarRecursoDonado(Recurso recursoDonado) throws SQLException{
+    public static ResultadoOperacion registrarRecursoDonado(Recurso recursoDonado) throws SQLException{
+        ResultadoOperacion respuesta = new ResultadoOperacion();
         Connection conexionBD = ConexionBD.abrirConexionBD();
+        respuesta.setError(true);
+        respuesta.setNumeroFilasAfectadas(-1);
         
          if(conexionBD != null)
          {
@@ -63,47 +67,38 @@ public class RecursoDAO
                  String guardarRecurso = "INSERT INTO recurso "
                          + "( idRecurso , titulo , editor , autor , tema , isbn , serie , anio , estado , numDisponible) "
                          + "VALUES (NULL, ? , ? , ? , NULL , ? , ? , ? , ? , ? )";
-                 PreparedStatement statement = conexionBD.prepareCall(guardarRecurso);
+                PreparedStatement statement = conexionBD.prepareCall(guardarRecurso);
                  
-                 statement.setString(1, recursoDonado.getTitulo());
-                 statement.setString(2, recursoDonado.getEditor());
-                 statement.setString(3, recursoDonado.getAutor());
-                 statement.setString(4, recursoDonado.getISBN());
-                 statement.setString(5, recursoDonado.getSerie());
-                 statement.setString(6, recursoDonado.getAnio());
-                 statement.setInt(7, recursoDonado.getNumDisponible());
+                statement.setString(1, recursoDonado.getTitulo());
+                statement.setString(2, recursoDonado.getEditor());
+                statement.setString(3, recursoDonado.getAutor());
+                statement.setString(4, recursoDonado.getISBN());
+                statement.setString(5, recursoDonado.getSerie());
+                statement.setString(6, recursoDonado.getAnio());
+                statement.setString(7, recursoDonado.getEstado());
+                statement.setInt(8, recursoDonado.getNumDisponible());
                  
-                 int resultSet = statement.executeUpdate();
+                int numeroFilas = statement.executeUpdate();
                  
-                 if (resultSet == 0){
-                     recursoDonado.setIdRecurso(-1);
-                     throw new SQLException("No se ha podido registrar " );
-                 }             
-                 else{
-                     recursoDonado.setIdRecurso(buscarIdRecurso(recursoDonado.getISBN(), conexionBD));
-                 }
+                if(numeroFilas>0)
+                {
+                    respuesta.setError(false);
+                    respuesta.setMensaje("recurso donado registrado correctamente");
+                    respuesta.setNumeroFilasAfectadas(numeroFilas);                    
+                } 
+                else
+                    respuesta.setMensaje("No se pudo registrar la informacion del recurso");
                  
              } catch (SQLException ex) {
-                 ex.printStackTrace();
+                 respuesta.setMensaje(ex.getMessage());   
              }finally{
                  conexionBD.close();
              }
          }
+         else
+             respuesta.setMensaje("Por el momento no hay conexión con la base de datos");
          
-        return recursoDonado;
+        return respuesta;
     }
     
-    public static int buscarIdRecurso(String isbn, Connection conexionBD) throws SQLException{
-        int idRecurso = 0;
-        
-        String buscarRecurso = "SELECT idRecurso FROM recurso WHERE isbn = ? ";
-        PreparedStatement statement = conexionBD.prepareCall(buscarRecurso);
-        statement.setString(1, isbn);
-        ResultSet resultadoConsulta = statement.executeQuery();
-        
-        if (resultadoConsulta.next())
-            idRecurso = resultadoConsulta.getInt("idRecurso");
-        
-        return idRecurso;     
-    }
 }

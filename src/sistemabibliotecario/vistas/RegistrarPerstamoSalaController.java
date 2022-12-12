@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import sistemabibliotecario.DAO.PrestamoDAO;
 import sistemabibliotecario.DAO.RecursoDAO;
 import sistemabibliotecario.POJO.Recurso;
@@ -48,6 +49,7 @@ public class RegistrarPerstamoSalaController implements Initializable
     @FXML
     private void B_cancelar(ActionEvent event) 
     {
+        cerrarVentana();
     }
 
     @FXML
@@ -66,6 +68,7 @@ public class RegistrarPerstamoSalaController implements Initializable
         catch (SQLException ex) 
         {
             Utilidades.mostrarAlerta("Error de conexion", "Hubo un error en el proceso de comunicacion, intentelo mas tarde", Alert.AlertType.ERROR);
+            cerrarVentana();
         }
     }
 
@@ -93,5 +96,11 @@ public class RegistrarPerstamoSalaController implements Initializable
         {
             Utilidades.mostrarAlerta("Error de conexion", "Hubo un error en el proceso de comunicacion, intentelo mas tarde", Alert.AlertType.ERROR);
         }
+    }
+    
+    private void cerrarVentana()
+    {
+        Stage escenarioPrincipal = (Stage) L_isbn.getScene().getWindow();
+        escenarioPrincipal.close();
     }
 }
