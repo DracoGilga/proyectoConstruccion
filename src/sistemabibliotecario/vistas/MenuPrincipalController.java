@@ -1,6 +1,8 @@
 /*
- * 
- * 
+ * Menu Principal
+ * Autor: Álvaro Barradas Fernández
+ * Fecha de creación: 09/12/2022
+ * Descripción: Menu principal para acceder a los distintos casos de uso
  */
 package sistemabibliotecario.vistas;
 
@@ -24,8 +26,8 @@ public class MenuPrincipalController implements Initializable
 {
 
     @FXML
-    private Button btn_CerrarSesion;
-    
+    private Button BTN_cerrarSesion;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
@@ -42,7 +44,7 @@ public class MenuPrincipalController implements Initializable
         try {
             Parent root = vista.load();
             LoginController loginController = vista.getController();
-            Stage stage = (Stage) btn_CerrarSesion.getScene().getWindow();
+            Stage stage = (Stage) BTN_cerrarSesion.getScene().getWindow();
             Scene loginView = new Scene(root);
             stage.setScene(loginView);
             stage.setTitle("Iniciar sesión.");
@@ -86,18 +88,18 @@ public class MenuPrincipalController implements Initializable
         try
         {
             
-            Parent vista = FXMLLoader.load(getClass().getResource("SeleccionarUsuarioRegistro.fxml"));
+            Parent vista = FXMLLoader.load(getClass().getResource("RegistrarUsuarioBibliotecario.fxml"));
             Scene escenaUsuario = new Scene(vista);
             Stage escenarioNuevo = new Stage();
             escenarioNuevo.setScene(escenaUsuario);
             escenarioNuevo.initModality(Modality.APPLICATION_MODAL);
-            escenarioNuevo.setTitle("Seleccionar tipo de usuario");
+            escenarioNuevo.setTitle("Registrar usuario bibliotecario");
             escenarioNuevo.showAndWait();
             
         } catch(IOException ie)
         {
             
-            Utilidades.mostrarAlerta("Error", "Error al cargar registrar usuario", Alert.AlertType.ERROR);
+            Utilidades.mostrarAlerta("Error", "Error al cargar registrar usuario bibliotecario", Alert.AlertType.ERROR);
             
         }
         

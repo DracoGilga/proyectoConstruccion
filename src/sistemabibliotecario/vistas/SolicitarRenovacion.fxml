@@ -6,6 +6,42 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemabibliotecario.vistas.SolicitarRenovacionController">
-    
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemabibliotecario.vistas.SolicitarRenovacionController">
+   <children>
+      <Label layoutX="135.0" layoutY="77.0" text="Nombre:" />
+      <Label layoutX="97.0" layoutY="112.0" text="Apellido Paterno:" />
+      <Label layoutX="95.0" layoutY="155.0" text="Apellido Materno:" />
+      <Label layoutX="132.0" layoutY="188.0" text="Direccion:" />
+      <Label layoutX="19.0" layoutY="292.0" text="------------------------------------Prestamo de Recurso Bibliotecario-------------------------------------------" />
+      <TextField fx:id="TF_matriculaNumeroPersonal" layoutX="194.0" layoutY="40.0" prefHeight="25.0" prefWidth="210.0" />
+      <TextField fx:id="TF_nombre" disable="true" layoutX="194.0" layoutY="73.0" prefHeight="25.0" prefWidth="210.0" />
+      <TextField fx:id="TF_apellidoPaterno" disable="true" layoutX="195.0" layoutY="108.0" prefHeight="25.0" prefWidth="210.0" />
+      <TextField fx:id="TF_apellidoMaterno" disable="true" layoutX="195.0" layoutY="151.0" prefHeight="25.0" prefWidth="210.0" />
+      <TextField fx:id="TF_direccion" disable="true" layoutX="195.0" layoutY="184.0" prefHeight="25.0" prefWidth="210.0" />
+      <Button layoutX="449.0" layoutY="40.0" mnemonicParsing="false" onAction="#clicBuscarUsuario" prefHeight="25.0" prefWidth="80.0" text="Buscar" />
+      <Label layoutX="94.0" layoutY="321.0" text="Prestamos activos:" />
+      <Label layoutX="59.0" layoutY="388.0" text="Titulo:" />
+      <Label layoutX="227.0" layoutY="388.0" text="Autor:" />
+      <Label layoutX="386.0" layoutY="388.0" text="Editorial:" />
+      <Label layoutX="47.0" layoutY="443.0" text="Edición:" />
+      <Label layoutX="231.0" layoutY="443.0" text="ISBN:" />
+      <Label layoutX="398.0" layoutY="443.0" text="Tomo:" />
+      <Label layoutX="35.0" layoutY="495.0" text="Fecha de Inicio:" />
+      <Label layoutX="265.0" layoutY="495.0" text="Fecha de Fin:" />
+      <ComboBox fx:id="CB_prestamosActivos" layoutX="195.0" layoutY="317.0" prefHeight="25.0" prefWidth="210.0" promptText="--Seleccione un prestamo--" />
+      <TextField fx:id="TF_titulo" disable="true" layoutX="95.0" layoutY="384.0" prefHeight="25.0" prefWidth="125.0" />
+      <TextField fx:id="TF_autor" disable="true" layoutX="260.0" layoutY="384.0" prefHeight="25.0" prefWidth="125.0" />
+      <TextField fx:id="TF_editorial" disable="true" layoutX="432.0" layoutY="384.0" prefHeight="25.0" prefWidth="125.0" />
+      <TextField fx:id="TF_edicion" disable="true" layoutX="96.0" layoutY="439.0" prefHeight="25.0" prefWidth="125.0" />
+      <TextField fx:id="TF_isbn" disable="true" layoutX="260.0" layoutY="439.0" prefHeight="25.0" prefWidth="125.0" />
+      <TextField fx:id="TF_tomo" disable="true" layoutX="432.0" layoutY="439.0" prefHeight="25.0" prefWidth="125.0" />
+      <TextField fx:id="TF_fechaInicio" disable="true" layoutX="123.0" layoutY="491.0" prefHeight="25.0" prefWidth="125.0" />
+      <Button layoutX="455.0" layoutY="317.0" mnemonicParsing="false" onAction="#clicBuscarPrestamo" prefHeight="25.0" prefWidth="80.0" text="Buscar" />
+      <Button fx:id="BTN_registrar" layoutX="377.0" layoutY="547.0" mnemonicParsing="false" onAction="#clicRegistrar" text="Registrar" />
+      <Button layoutX="489.0" layoutY="547.0" mnemonicParsing="false" onAction="#clicCancelar" text="Cancelar" />
+      <Label layoutX="19.0" layoutY="44.0" text="Matricula/Numero de personal:" />
+      <DatePicker fx:id="DP_fechaFin" layoutX="143.0" layoutY="535.0" prefHeight="25.0" prefWidth="125.0" />
+      <Label layoutX="27.0" layoutY="539.0" text="Nueva Fecha de Fin:" />
+      <TextField fx:id="TF_fechaFin" disable="true" layoutX="343.0" layoutY="491.0" prefHeight="25.0" prefWidth="125.0" />
+   </children>
 </AnchorPane>

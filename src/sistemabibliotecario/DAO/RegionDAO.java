@@ -1,6 +1,8 @@
 /*
- *
- *
+ * DAO Region
+ * Autor: Álvaro Barradas Fernández
+ * 10/12/2022
+ * Descripción: Dao de region para el registro de docentes y estudiantes al sistema
  */
 package sistemabibliotecario.DAO;
 

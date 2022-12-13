@@ -1,6 +1,8 @@
 /*
- * 
- * 
+ * Pojo Resultado de Operación
+ * Autor: Álvaro Barradas Fernández
+ * 09/12/2022
+ * Descripción: Pojo para devolver resultado a las operaciones que se realizan en el sistema
  */
 package sistemabibliotecario.POJO;
 

@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemabibliotecario.vistas.MenuPrincipalController">
    <children>
-      <Button fx:id="btn_CerrarSesion" layoutX="390.0" layoutY="523.0" mnemonicParsing="false" onAction="#clicCerrarSesion" prefHeight="30.0" prefWidth="120.0" text="Cerrar Sesion">
+      <Button fx:id="BTN_cerrarSesion" layoutX="390.0" layoutY="523.0" mnemonicParsing="false" onAction="#clicCerrarSesion" prefHeight="30.0" prefWidth="120.0" text="Cerrar Sesion">
          <font>
             <Font size="14.0" />
          </font>

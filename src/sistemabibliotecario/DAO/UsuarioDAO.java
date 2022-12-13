@@ -1,3 +1,9 @@
+/*
+ * DAO Usuario
+ * Autor: Álvaro Barradas Fernández
+ * 09/12/2022
+ * Descripción: Dao de usuario para el inicio de sesion al sistema
+ */
 package sistemabibliotecario.DAO;
 
 import java.sql.Connection;
@@ -6,8 +12,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import sistemabibliotecario.POJO.Usuario;
 import sistemabibliotecario.conexionBD.ConexionBD;
-import sistemabibliotecario.utills.Constantes;
-
 
 public class UsuarioDAO 
 {
@@ -24,12 +28,12 @@ public class UsuarioDAO
                 
                 String consulta = "SELECT idUsuario, username FROM usuario "
                     + "WHERE username = ? AND password = ?";
-            PreparedStatement consultaLogin = conexionBD.prepareCall(consulta);
-            consultaLogin.setString(1, nombreUsuario);
-            consultaLogin.setString(2, contrasenaUsuario);
-            ResultSet resultadoConsulta = consultaLogin.executeQuery();
-            usuarioSesion = new Usuario();
-            if(resultadoConsulta.next())
+                PreparedStatement consultaLogin = conexionBD.prepareCall(consulta);
+                consultaLogin.setString(1, nombreUsuario);
+                consultaLogin.setString(2, contrasenaUsuario);
+                ResultSet resultadoConsulta = consultaLogin.executeQuery();
+                usuarioSesion = new Usuario();
+                if(resultadoConsulta.next())
                 {
                     
                     usuarioSesion.setIdUsuario(resultadoConsulta.getInt("idUsuario"));

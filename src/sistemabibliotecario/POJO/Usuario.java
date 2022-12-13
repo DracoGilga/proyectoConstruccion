@@ -1,4 +1,9 @@
-
+/*
+ * POJO Usuario
+ * Autor: Álvaro Barradas Fernández
+ * 09/12/2022
+ * Descripción: Pojo de usuario para el inicio de sesion al sistema
+ */
 package sistemabibliotecario.POJO;
 
 public class Usuario 

@@ -1,50 +1,45 @@
 /*
- *
- * 
+ * POJO UsuarioBibliotecario
+ * Autor: Álvaro Barradas Fernández
+ * 10/12/2022
+ * Descripción: Pojo de usuario bibliotecario para el registro de este al sistema
  */
 package sistemabibliotecario.POJO;
 
-public class Estudiante 
+public class UsuarioBibliotecario 
 {
     
-    private int idEstudiante;
-    private String matricula;
+    private String idUsuarioBibliotecario;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
     private String direccion;
-    private int idCarrera;
-    private String carrera;
     private int idRegion;
     private String region;
-    
+    private int idCarrera;
+    private String carrera;
     
     //CONSTRUCTORES
 
-    public Estudiante() {
+    public UsuarioBibliotecario() {
     }
 
-    public Estudiante(int idEstudiante, String matricula, String nombre, String apellidoPaterno, String apellidoMaterno, String direccion, int idCarrera, String carrera, int idRegion, String region) {
-        this.idEstudiante = idEstudiante;
-        this.matricula = matricula;
+    public UsuarioBibliotecario(String idUsuarioBibliotecario, String nombre, String apellidoPaterno, String apellidoMaterno, String direccion, int idRegion, String region, int idCarrera, String carrera) {
+        this.idUsuarioBibliotecario = idUsuarioBibliotecario;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
         this.direccion = direccion;
-        this.idCarrera = idCarrera;
-        this.carrera = carrera;
         this.idRegion = idRegion;
         this.region = region;
+        this.idCarrera = idCarrera;
+        this.carrera = carrera;
     }
-    
 
     //GETTERS
-    public int getIdEstudiante() {
-        return idEstudiante;
-    }
 
-    public String getMatricula() {
-        return matricula;
+    public String getIdUsuarioBibliotecario() {
+        return idUsuarioBibliotecario;
     }
 
     public String getNombre() {
@@ -63,14 +58,6 @@ public class Estudiante
         return direccion;
     }
 
-    public int getIdCarrera() {
-        return idCarrera;
-    }
-
-    public String getCarrera() {
-        return carrera;
-    }
-
     public int getIdRegion() {
         return idRegion;
     }
@@ -79,14 +66,18 @@ public class Estudiante
         return region;
     }
 
-    //SETTERS
-
-    public void setIdEstudiante(int idEstudiante) {
-        this.idEstudiante = idEstudiante;
+    public int getIdCarrera() {
+        return idCarrera;
     }
 
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
+    public String getCarrera() {
+        return carrera;
+    }
+    
+    //SETTERS
+
+    public void setIdUsuarioBibliotecario(String idUsuarioBibliotecario) {
+        this.idUsuarioBibliotecario = idUsuarioBibliotecario;
     }
 
     public void setNombre(String nombre) {
@@ -105,14 +96,6 @@ public class Estudiante
         this.direccion = direccion;
     }
 
-    public void setIdCarrera(int idCarrera) {
-        this.idCarrera = idCarrera;
-    }
-
-    public void setCarrera(String carrera) {
-        this.carrera = carrera;
-    }
-
     public void setIdRegion(int idRegion) {
         this.idRegion = idRegion;
     }
@@ -120,7 +103,14 @@ public class Estudiante
     public void setRegion(String region) {
         this.region = region;
     }
-    
+
+    public void setIdCarrera(int idCarrera) {
+        this.idCarrera = idCarrera;
+    }
+
+    public void setCarrera(String carrera) {
+        this.carrera = carrera;
+    }
     
     
     

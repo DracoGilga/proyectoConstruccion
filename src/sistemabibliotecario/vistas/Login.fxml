@@ -8,8 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="467.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sistemabibliotecario.vistas.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="467.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemabibliotecario.vistas.LoginController">
    <children>
       <ImageView fitHeight="600.0" fitWidth="530.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -31,8 +30,8 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="tf_NombreUsuario" layoutX="583.0" layoutY="160.0" prefHeight="30.0" prefWidth="260.0" />
-      <PasswordField fx:id="pf_Password" layoutX="585.0" layoutY="247.0" prefHeight="30.0" prefWidth="260.0" />
+      <TextField fx:id="TF_nombreUsuario" layoutX="583.0" layoutY="160.0" prefHeight="30.0" prefWidth="260.0" />
+      <PasswordField fx:id="PF_password" layoutX="585.0" layoutY="247.0" prefHeight="30.0" prefWidth="260.0" />
       <Button layoutX="655.0" layoutY="324.0" mnemonicParsing="false" onAction="#clicIniciarSesion" prefHeight="30.0" prefWidth="120.0" text="Iniciar Sesion" />
    </children>
 </AnchorPane>

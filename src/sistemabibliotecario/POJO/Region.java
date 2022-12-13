@@ -1,6 +1,8 @@
 /*
- * 
- * 
+ * Pojo Region
+ * Autor: Álvaro Barradas Fernández
+ * 10/12/2022
+ * Descripción: Pojo de region para el registro de docentes y estudiantes al sistema
  */
 package sistemabibliotecario.POJO;
 

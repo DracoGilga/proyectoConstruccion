@@ -1,6 +1,8 @@
 /*
- * 
- * 
+ * CU IniciarSesion
+ * Autor: Álvaro Barradas Fernández
+ * Fecha de creación:09/12/2022
+ * Descripción: Inicio de sesion al sistema
  */
 package sistemabibliotecario.vistas;
 
@@ -22,15 +24,14 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sistemabibliotecario.DAO.UsuarioDAO;
 import sistemabibliotecario.POJO.Usuario;
-import sistemabibliotecario.utills.Constantes;
 import sistemabibliotecario.utills.Utilidades;
 
 public class LoginController implements Initializable {
 
     @FXML
-    private TextField tf_NombreUsuario;
+    private TextField TF_nombreUsuario;
     @FXML
-    private PasswordField pf_Password;
+    private PasswordField PF_password;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) 
@@ -42,8 +43,8 @@ public class LoginController implements Initializable {
     private void clicIniciarSesion(ActionEvent event) throws IOException
     {
         
-        String nombreUsuario = tf_NombreUsuario.getText();
-        String password = pf_Password.getText();
+        String nombreUsuario = TF_nombreUsuario.getText();
+        String password = PF_password.getText();
         boolean valido = true;
         
         if(nombreUsuario.isEmpty() || password.isEmpty())
@@ -53,8 +54,8 @@ public class LoginController implements Initializable {
             Utilidades.mostrarAlerta("Faltan datos", "No se puede dejar ningún campo vacío.\n\n"
                     + "Por favor, compruebe la información ingresada e inténtelo nuevamente.\n",
                     Alert.AlertType.WARNING);
-            tf_NombreUsuario.setText("");
-            pf_Password.setText("");
+            TF_nombreUsuario.setText("");
+            PF_password.setText("");
             
         }
         if(valido)
@@ -106,7 +107,7 @@ public class LoginController implements Initializable {
             Utilidades.mostrarAlerta("Bienvenid@", "Credenciales correctas, bienvenid@ al sistema", Alert.AlertType.INFORMATION);
             Parent vista = FXMLLoader.load(getClass().getResource("MenuPrincipal.fxml"));
             Scene escenaPrincipal = new Scene(vista);
-            Stage escenarioBase = (Stage) tf_NombreUsuario.getScene().getWindow();
+            Stage escenarioBase = (Stage) TF_nombreUsuario.getScene().getWindow();
             escenarioBase.setScene(escenaPrincipal);
             escenarioBase.setTitle("Menu principal");
             escenarioBase.show();

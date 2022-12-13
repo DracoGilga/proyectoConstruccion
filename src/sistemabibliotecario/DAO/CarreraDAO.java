@@ -1,6 +1,8 @@
 /*
- *
- *
+ * DAO Carrera
+ * Autor: Álvaro Barradas Fernández
+ * 10/12/2022
+ * Descripción: Dao de carrera para el registro de alumnos al sistema
  */
 package sistemabibliotecario.DAO;
 
